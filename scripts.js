@@ -57,7 +57,7 @@ buyClickPower.addEventListener("click", function() {
         clickPowerPriceAmount = Math.floor(clickPowerPriceAmount * 1.33);
 
         //Update Click Power 
-        clickPower += 1;
+        clickPower += 1 * Math.floor(clickPowerLevelNumber * 1.05);
 
         //refresh shop item
         refreshPowerClick();
@@ -94,8 +94,7 @@ let grandmaMultiple = document.getElementById('grandma-multiple');
 //buy a grandma
 buyGrandma.addEventListener("click", function() {
 
-    //turn autoGrandma on!
-    autoGrandma = true 
+    
     autoGrandmaStart();
     
     //make sure we have enough cookies and subtract our cookies from the price
@@ -109,17 +108,16 @@ buyGrandma.addEventListener("click", function() {
 
         //update price
         grandmaPriceAmount = Math.floor(grandmaPriceAmount * 1.33);
-    }
-
     
+        //update grandma power
+        grandmaPower += 10 + Math.floor(grandmaLevelNumber * 1.33);
 
-    //update grandma power
-    grandmaPower += 10;
+        //turn autoGrandma on!
+        autoGrandma = true 
 
-    //turn autoGrandma on! 
-
-    //refresh shop item 
-    refreshGrandma();
+        //refresh shop item 
+        refreshGrandma();
+    }
 
 })
 
@@ -171,7 +169,7 @@ buyFacility.addEventListener("click", function() {
         //update price 
         facilityPriceAmount = Math.floor(facilityPriceAmount * 1.33);
         //update facility power 
-        facilityPower += 600;
+        facilityPower += 600 + Math.floor(facilityLevelNumber * 1.33);
         //turn autoFacility on!
         facilityAuto = true
         autoFacilityStart();
