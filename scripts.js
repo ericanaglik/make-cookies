@@ -126,7 +126,7 @@ buyGrandma.addEventListener("click", function() {
 let refreshGrandma = function() {
     grandmaLevel.innerHTML = grandmaLevelNumber;
     grandmaPrice.innerHTML = grandmaPriceAmount;
-    grandmaMultiple.innerHTML = grandmaPower;
+    grandmaMultiple.innerHTML = grandmaPower - 10;
 }
 
 window.setInterval(function() {
