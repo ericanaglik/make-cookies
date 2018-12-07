@@ -1,9 +1,9 @@
- /******************
-    COOKIE CLICKER
-  *****************/
+/******************
+   COOKIE CLICKER
+*****************/
  
- //declare default variables
- let cookieCount = 0;
+//declare default variables
+let cookieCount = 0;
  
 
 //declare DOM variables 
@@ -162,19 +162,35 @@ buyFacility.addEventListener("click", function() {
     facilityAuto = false;
 
     //make sure we have enough cookies 
-
-    //upgrade power level
-
-    //update price 
-
-    //update facility power 
-
-    //turn autoFacility on!
-
-    //refresh shop item
+    if (cookieCount >= facilityPriceAmount) {
+        cookieCount -= facilityPriceAmount;
+        refreshCookieCount()
     
+        //upgrade power level
+        facilityLevelNumber += 1;
+        //update price 
+        facilityPriceAmount = Math.floor(facilityPriceAmount * 1.33);
+        //update facility power 
+        facilityPower += 600;
+        //turn autoFacility on!
+        facilityAuto = true
+        autoFacilityStart();
+        //refresh shop item
+        refreshFacility();
+    }
 })
 
 //game loop
+let autoFacilityStart = function() {
+    let facilityInt = window.setInterval(function(){
+        cookieCount += facilityPower;
+        refreshCookieCount();
+    }, 1000);
+}
 
 //refresh shop
+let refreshFacility = function() {
+    facilityLevel.innerHTML = facilityLevelNumber;
+    facilityPrice.innerHTML = facilityPriceAmount;
+    facilityMultiple.innerHTML = facilityPower - 600;
+}
