@@ -139,3 +139,42 @@ let autoGrandmaStart = function() {
        refreshCookieCount();
    }, 1000); 
 }
+
+/******************
+    FACILITIES
+*****************/
+
+//set default variables
+let facilityAuto = false;
+let facilityPower = 2000;
+let facilityPriceAmount = 100000;
+let facilityLevelNumber = 0;
+
+//declare DOM variables
+let buyFacility = document.getElementById('buy-facility');
+let facilityPrice = document.getElementById('facility-price');
+let facilityLevel = document.getElementById('facility-level');
+let facilityMultiple = document.getElementById('facility-multiple');
+
+//buy a facility
+buyFacility.addEventListener("click", function() {
+    //set autoLoop to false
+    facilityAuto = false;
+
+    //make sure we have enough cookies 
+
+    //upgrade power level
+
+    //update price 
+
+    //update facility power 
+
+    //turn autoFacility on!
+
+    //refresh shop item
+    
+})
+
+//game loop
+
+//refresh shop
